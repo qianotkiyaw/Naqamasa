@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naqamasa - About</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      overflow-y:auto;
+
+      background:
+      linear-gradient(rgba(75,49,38,0.78), rgba(35,20,16,0.92)),
+      url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop') center/cover;
+
+      background-attachment: fixed;
+
+      color:white;
+      position:relative;
+    }
+
+    .magic-orb{
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      filter:blur(50px);
+      z-index:0;
+      animation:floating 8s ease-in-out infinite;
+    }
+
+    .orb1{
+      top:-120px;
+      left:-120px;
+      background:rgba(228,175,105,0.18);
+    }
+
+    .orb2{
+      bottom:-150px;
+      right:-120px;
+      background:rgba(202,89,73,0.15);
+      animation-delay:3s;
+    }
+
+    @keyframes floating{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(40px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    header{
+      width:100%;
+      padding:5px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      z-index:999;
+
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.18);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:#E4AF69;
+      letter-spacing:1px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      margin-left:25px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav a:hover{
+      color:#E4AF69;
+    }
+
+    .hero{
+      width:100%;
+      min-height:70vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 8% 40px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-content{
+      max-width:900px;
+      animation:fadeIn 1s ease;
+    }
+
+    .subtitle{
+      letter-spacing:5px;
+      color:#E4AF69;
+      font-size:14px;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+
+    .hero h1{
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(135deg,#E4AF69,#CA5949,#C28764);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      color:#ffffff;
+      font-size:18px;
+      line-height:1.9;
+      margin-bottom:40px;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0px);
+      }
+    }
+
+    .about-section{
+      width:100%;
+      padding:100px 8%;
+      position:relative;
+      z-index:2;
+    }
+
+    .about-header{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .about-header h2{
+      font-size:52px;
+      color:#E4AF69;
+      margin-bottom:20px;
+    }
+
+    .about-header p{
+      color:#F3E8DD;
+      line-height:1.8;
+    }
+
+    .about-layout{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-image img{
+      width:100%;
+      border-radius:30px;
+      border:2px solid rgba(197,185,166,0.15);
+      box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .about-content{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .about-box{
+      background:rgba(197,185,166,0.08);
+      border:1px solid rgba(197,185,166,0.15);
+      backdrop-filter:blur(12px);
+      padding:35px;
+      border-radius:28px;
+      transition:0.3s;
+    }
+
+    .about-box:hover{
+      transform:translateY(-8px);
+      border-color:rgba(228,175,105,0.4);
+    }
+
+    .about-box h3{
+      color:#C28764;
+      margin-bottom:18px;
+      font-size:28px;
+    }
+
+    .about-box p{
+      color:#F3E8DD;
+      line-height:1.9;
+    }
+
+    .profile-section{
+      width:100%;
+      padding:120px 8%;
+      position:relative;
+      z-index:2;
+    }
+
+    .profile-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .profile-header h2{
+      font-size:52px;
+      margin-bottom:20px;
+      color:#E4AF69;
+    }
+
+    .profile-header p{
+      color:#F3E8DD;
+      line-height:1.8;
+    }
+
+    .profile-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:25px;
+      margin-bottom:80px;
+    }
+
+    .profile-card{
+      background:rgba(197,185,166,0.08);
+      border:1px solid rgba(197,185,166,0.15);
+      backdrop-filter:blur(12px);
+      padding:35px;
+      border-radius:30px;
+      transition:0.3s;
+    }
+
+    .profile-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(228,175,105,0.4);
+    }
+
+    .profile-card h3{
+      color:#C28764;
+      margin-bottom:20px;
+      font-size:28px;
+    }
+
+    .profile-card p,
+    .profile-card li{
+      color:#F3E8DD;
+      line-height:1.9;
+    }
+
+    .profile-card ul{
+      padding-left:20px;
+    }
+
+    .full-card{
+      grid-column:span 2;
+    }
+
+    .organization-section{
+      margin-top:80px;
+    }
+
+    .org-container{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:30px;
+    }
+
+    .org-card{
+      background:rgba(197,185,166,0.08);
+      border:1px solid rgba(197,185,166,0.15);
+      padding:30px;
+      border-radius:28px;
+      text-align:center;
+      min-width:260px;
+      backdrop-filter:blur(12px);
+      transition:0.3s;
+    }
+
+    .org-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .leader{
+      background:linear-gradient(135deg, rgba(228,175,105,0.2), rgba(202,89,73,0.15));
+      border:1px solid rgba(228,175,105,0.35);
+    }
+
+    .org-card h3{
+      color:#E4AF69;
+      margin-bottom:10px;
+    }
+
+    .org-card p{
+      color:#F3E8DD;
+    }
+
+    .org-line{
+      width:4px;
+      height:60px;
+      background:linear-gradient(#E4AF69,#CA5949);
+      border-radius:999px;
+    }
+
+    .org-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+      width:100%;
+    }
+
+    /* TOMBOL BALIK HOME */
+
+    .back-home{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+
+      width:65px;
+      height:65px;
+
+      border-radius:50%;
+
+      background:linear-gradient(135deg,#E4AF69,#C28764);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-decoration:none;
+      color:white;
+      font-size:28px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+      z-index:999;
+      transition:0.3s;
+    }
+
+    .back-home:hover{
+      transform:translateY(-6px) scale(1.08);
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .full-card{
+        grid-column:span 1;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="magic-orb orb1"></div>
+  <div class="magic-orb orb2"></div>
+
+  <header>
+<div style="display:flex; align-items:center; gap:10px;">
+  <img src="Logo no Bg.png" width="70" height="70">
+  <div class="logo">Naqamasa</div>
+</div>
+
+    <nav>
+
+<a href="Website1.html">Home</a>
+
+<a href="About.html">About</a>
+
+<a href="Collection.html">Collection</a>
+
+<a href="Guide.html">Guide</a>
+
+</nav>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="subtitle">✦ DIGITAL LIBRARY ✦</p>
+
+      <h1>
+        <span>Naqamasa</span>
+      </h1>
+
+      <p>
+        E-Library Naqamasa merupakan perpustakaan yang hadir sebagai ruang belajar, pusat informasi, dan sarana pengembangan literasi bagi masyarakat. Dengan menggabungkan konsep perpustakaan modern dan teknologi digital, Naqamasa berkomitmen menyediakan akses informasi yang mudah, cepat, dan terpercaya guna mendukung kebutuhan pendidikan, penelitian, serta pengembangan wawasan pengguna.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="about-section">
+
+    <div class="about-header">
+
+      <p class="subtitle">✦ ABOUT WEBSITE ✦</p>
+
+      <h2>Tentang Website Naqamasa</h2>
+
+      <p>
+        Mengenal lebih dekat konsep, tujuan, dan pengalaman digital
+        yang dihadirkan oleh website Naqamasa.
+      </p>
+
+    </div>
+
+    <div class="about-layout">
+
+      <div class="about-image">
+
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop" alt="Naqamasa Library">
+
+      </div>
+
+      <div class="about-content">
+
+        <div class="about-box">
+
+          <h3>📚 Apa Itu Naqamasa?</h3>
+
+          <p>
+            Naqamasa = Nalar, Kualitas, Masa Depan</p>
+
+<p>Naqamasa berasal dari gabungan tiga nilai utama dari sebuah perpustakaan digital, yaitu nalar sebagai kemampuan berpikir kritis dan imajinatif, kualitas informasi yang terpercaya, dan masa depan yang merepresentasikan transformasi digital dalam dunia literasi.
+          </p>
+
+        </div>
+
+        <div class="about-box">
+
+          <h3>📞Contact Person</h3>
+
+          <p>
+            Email = Naqamasa1@gmail.com
+          </p>
+		  
+		   <p>
+            Nomor Telepon = 081475700908
+          </p>
+		  
+		  <p>
+            Alamat = Jl. Prof. Soedarto No.50239, Tembalang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50275
+          </p>
+
+<div class="map-container">
+
+  <iframe
+    src="https://www.google.com/maps?q=Jl.%20Prof.%20Soedarto%20No.50239,%20Tembalang,%20Semarang&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+</div>
+
+        </div>
+
+         
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="profile-section">
+
+    <div class="profile-header">
+
+      <p class="subtitle">✦ LIBRARY PROFILE ✦</p>
+
+      <h2>Profil Perpustakaan Naqamasa</h2>
+
+    </div>
+
+    <div class="profile-grid">
+
+      <div class="profile-card">
+
+        <h3>🌟 Visi</h3>
+
+        <p>
+          Menjadi website perpustakaan yang informatif, inovatif, dan mudah diakses sebagai sarana meningkatkan literasi serta minat baca pengguna.
+        </p>
+
+      </div>
+
+      <div class="profile-card">
+
+        <h3>📜 Misi</h3>
+
+        <ul>
+          <li>Menyediakan informasi koleksi dan layanan perpustakaan secara cepat dan mudah diakses.</li>
+          <li>Membantu pengguna menemukan sumber informasi dan referensi akademik dengan lebih efisien.</li>
+          <li>Menghadirkan tampilan website yang menarik, sederhana, dan ramah pengguna.</li>
+		  <li>Mengembangkan kerja sama tim yang kreatif dan bertanggung jawab dalam pengelolaan website perpustakaan.</li>
+		  <li>Mendukung peningkatan budaya literasi digital di lingkungan sekolah maupun masyarakat.</li>
+        </ul>
+
+      </div>
+
+      <div class="profile-card full-card">
+
+        <h3>🏛 Tentang Kami</h3>
+
+        <p>
+          Nama “Naqamasa” merupakan singkatan dari Nalar, Kualitas, dan Masa Depan. Ketiga nilai tersebut menjadi landasan utama dalam pengembangan perpustakaan digital ini. Nalar mencerminkan kemampuan berpikir kritis, kreatif, dan imajinatif dalam memahami serta mengolah informasi. Kualitas menggambarkan komitmen perpustakaan dalam menyediakan sumber informasi yang terpercaya, relevan, dan bermanfaat bagi pengguna. Sementara itu, Masa Depan merepresentasikan semangat transformasi digital dan inovasi literasi yang terus berkembang mengikuti kemajuan teknologi.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="organization-section" id="organization">
+
+      <div class="profile-header">
+
+        <p class="subtitle">✦ ORGANIZATION ✦</p>
+
+        <h2>Struktur Organisasi</h2>
+
+      </div>
+
+      <div class="org-container">
+
+        <div class="org-card leader">
+
+          <h3>Kepala Perpustakaan</h3>
+
+          <p>Avery Wisageni Putra Surasa</p>
+
+        </div>
+
+        <div class="org-line"></div>
+
+        <div class="org-grid">
+
+          <div class="org-card">
+            <h3>Divisi Koleksi</h3>
+            <p>Naqia Fatra Kamila</p>
+          </div>
+
+          <div class="org-card">
+            <h3>Divisi Teknologi</h3>
+            <p>Muhammad Pramudya Ananta</p>
+          </div>
+
+          <div class="org-card">
+            <h3>Divisi Layanan</h3>
+            <p>Laura Alice Amanda Putri</p>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  
+  
+
+  <!-- TOMBOL BALIK KE HOME -->
+
+  <a href="Website1.html" class="back-home">
+    ⌂
+  </a>
+
+</body>
+</html>

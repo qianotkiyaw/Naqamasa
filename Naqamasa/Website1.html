@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naqamasa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(75,49,38,0.78), rgba(35,20,16,0.92)),
+        url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop') center/cover;
+      color: white;
+      position: relative;
+    }
+
+    .magic-orb {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(50px);
+      z-index: 0;
+      animation: floating 8s ease-in-out infinite;
+    }
+
+    .orb1 {
+      top: -120px;
+      left: -120px;
+      background: rgba(228,175,105,0.18);
+    }
+
+    .orb2 {
+      bottom: -150px;
+      right: -120px;
+      background: rgba(202,89,73,0.15);
+      animation-delay: 3s;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(40px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    header {
+      width: 100%;
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #E4AF69;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin-left: 25px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #E4AF69;
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 8%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fadeIn 1s ease;
+    }
+
+    .subtitle {
+      letter-spacing: 5px;
+      color: #E4AF69;
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 75px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #E4AF69, #CA5949, #C28764);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #F3E8DD;
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 34px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #4B3126, #C28764);
+      color: white;
+      box-shadow: 0 10px 30px rgba(75,49,38,0.35);
+    }
+
+    .secondary-btn {
+      border: 2px solid rgba(228,175,105,0.25);
+      color: white;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .stat-box {
+      background: rgba(197,185,166,0.08);
+      border: 1px solid rgba(197,185,166,0.15);
+      backdrop-filter: blur(12px);
+      padding: 25px 35px;
+      border-radius: 24px;
+      min-width: 220px;
+      transition: 0.3s;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-8px);
+      border-color: rgba(147,197,253,0.5);
+    }
+
+    .stat-box h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #E4AF69;
+    }
+
+    .stat-box p {
+      margin: 0;
+      font-size: 15px;
+      color: #F3E8DD;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @media(max-width: 768px) {
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .stats {
+        margin-top: 40px;
+      }
+
+      .stat-box {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="magic-orb orb1"></div>
+  <div class="magic-orb orb2"></div>
+
+  <header style="backdrop-filter:blur(12px); background:rgba(0,0,0,0.18); position:fixed; top:0; left:0; width:100%; z-index:999; padding:5px 8%;">
+  
+<div style="display:flex; align-items:center; gap:10px;">
+  <img src="Logo no Bg.png" width="70" height="70">
+  <div class="logo">Naqamasa</div>
+</div>
+
+    <nav>
+
+<a href="Website1.html">Home</a>
+
+<a href="About.html">About</a>
+
+<a href="Collection.html">Collection</a>
+
+<a href="Guide.html">Guide</a>
+
+</nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="subtitle">✦ DIGITAL LIBRARY ✦</p>
+
+      <h1>
+        <span>Naqamasa</span>
+      </h1>
+
+      <div class="button-group">
+        <a href="Collection.html" class="btn primary-btn">Enter Library</a>
+        <a href="About.html" class="btn secondary-btn">Tentang Kami</a>
+      </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
